@@ -43,7 +43,8 @@ Website live Link:  https://codenext.herokuapp.com/
 App APK live link:  https://drive.google.com/file/d/1u2IpftDWxKXwQMahD4McL4oyM2p1T6aN/view?usp=sharing
 
 
-Demo APP: <video src='https://drive.google.com/file/d/1_EpOM-mHno8D5AUdMr9aaVGcLlityXm1/view?usp=sharing' width=180/> 
+Demo APP: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8aXK6mS_82k/0.jpg)](https://www.youtube.com/watch?v=8aXK6mS_82k)
+
 
 
 Demo Web:
