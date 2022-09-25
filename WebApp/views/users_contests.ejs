@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<title>Contests | CodeNext</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+	<link rel="stylesheet" type="text/css" href="/css/users_contests.css">
+	<link rel="stylesheet" type="text/css" href="/css/ide.css">
+
+
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+	<link rel="stylesheet" href="/css/vendor.css"> 
+   <link rel="stylesheet" href="/css/main.css"> 
+
+
+   <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body id="wrap">
+	
+	<header> 
+
+        <div class="header-logo">
+           <a href="/">CodeNext</a>
+        </div> 
+ 
+         <a id="header-menu-trigger" href="#0">
+              <span class="header-menu-text">Menu</span>
+               <span class="header-menu-icon"></span>
+         </a> 
+ 
+         <nav id="menu-nav-wrap">
+ 
+             <a href="#0" class="close-button" title="close"><span>Close</span></a>	
+ 
+            <h3>CodeNext</h3>  
+ 
+             <ul class="nav-list">
+                 <li class="current"><a href="/" title="">Home</a></li>
+                 <li><a  href="/problems/all" title="">Practice</a></li>
+                 <li><a href="/contests" title="">Contests</a></li>
+                 <li><a  href="/rankings" title="">Rankings</a></li>
+                 <li><a  href="/ide" title="">IDE</a></li>
+
+                 <% if (locals.user && locals.user.isAdmin === true) { 
+                    %>	 <li><a  href="/admin"" title="">Admin</a></li>	<% } %>
+                 
+                 <% if (locals.user) { %>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <li><a href="/user/logout">Sign Out</a></li>
+
+                    <% } else { %>
+
+                    <li><a id="ide-log" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+                    <li><a id="ide-log" data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
+                    <% } %>
+                 
+             </ul>				
+ 
+             <ul class="header-social-list">
+              <li>
+                  <a href="#"><i class="fa fa-facebook-square" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-twitter" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-instagram" id = "nav-icon"></i></a>
+              </li>
+             <li>
+                 <a href="#"><i class="fa fa-behance" id = "nav-icon"></i></a>
+             </li>
+              <li>
+                  <a href="#"><i class="fa fa-dribbble" id = "nav-icon"></i></a>
+              </li>	         
+           </ul>		
+ 
+         </nav>  <!-- end #menu-nav-wrap -->
+ 
+     </header> <!-- end header -->  
+
+
+
+
+	<div class="grid-content content small">
+
+		<div class="box">
+			<h1 id="upc-con" class="title center">Upcoming Contests</h1>
+			
+			<table id="contest-coming" class="table sortable">
+				<thead>
+					<tr>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Code</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Name</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Starting in</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Duration</a></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="show-all-contests" class="display-all-contests">
+					<% for(var i = 0; i < contests.length; i++){ %>
+					<tr id="<%= i %>">
+						<td>
+							<%= contests[i].code %>
+						</td>
+						<td>
+							<%= contests[i].name %>
+						</td>
+						<td>
+							<%= contests[i].dt %>
+							<%= contests[i].tm %>
+						</td>
+						<td>
+							<%= contests[i].dur %>
+						</td>
+						<td>
+							<a href="/contests/<%= contests[i].code %>">
+								<button type="button" class="btn btn-success btn-sm">Enter</button>
+							</a>
+						</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="box">
+			<h1 id="upc-con" class="title center">Past Contests</h1>
+	
+			<table id="contest-coming" class="table sortable">
+				<thead>
+					<tr>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Code</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Name</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Started at</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Duration</a></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="show-all-contests" class="display-past-contests">
+					<% for(var i = 0; i < pastcontests.length; i++){ %>
+					<tr id="past_<%= i %>">
+						<td>
+							<%= pastcontests[i].code %>
+						</td>
+						<td>
+							<%= pastcontests[i].name %>
+						</td>
+						<td>
+							<%= pastcontests[i].dt %>
+							<%= pastcontests[i].tm %>
+						</td>
+						<td>
+							<%= pastcontests[i].dur %>
+						</td>
+						<td>
+							<a href="/contests/<%= pastcontests[i].code %>">
+								<button type="button" class="btn btn-success btn-sm">Enter</button>
+							</a>
+						</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="signup-content" >
+            <div class="modal-header" id="btn-wrap">
+                <button type="button" id="sign-up-btn" class="btn-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/user/login" method="post" class="form-signin" id="loginform">
+                <img class="mb-4" src="/photos/avattar.jpg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+                <label for="username" class="sr-only">Username</label>
+                    <input type="text" name="username" id="inputEmailSignIn" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputPasswordSignIn" class="sr-only">Password</label>
+                    <input type="password" name="password" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                <input id="sign-btn" type="submit" name="" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in">
+                <p class="mt-5 mb-3 text-muted">Don't have an Account? <a class="close-modal" data-toggle="modal" href="#signupModal"> Sign Up Now!</a></p>
+                <label id="errormsg" class="errmsg"></label>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="signup-content">
+            <div class="modal-header" id="btn-wrap">
+                <button type="button" id="sign-up-btn" class="btn-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div id="sign-up">
+            <form action="/user/signup" method="post" class="form-signin" id ="signupform">
+                <img class="mb-3"  src="/photos/avattar.jpg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                <label for="name" class="sr-only">Username</label>
+                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                <label for="name" class="sr-only">Name</label>
+                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" name="email" id="inputEmailSignUp" class="form-control" placeholder="Email" required autofocus>
+                <label for="inputPasswordSignUp" class="sr-only">Password</label>
+                <input type="password" name="password" id="inputPasswordSignUp" class="form-control" placeholder="Password" required>
+                <label for="inputPasswordSignUp" class="sr-only">Confirm Password</label>
+                <input type="password" name="password2" id="inputPasswordSignUp2" class="form-control" placeholder="Confirm Password" required>
+                <input type="submit" id="sign-btn" name="" class=" btn btn-lg btn-primary btn-block" type="submit" value="Sign Up">
+                <p class="mt-5 mb-3 text-muted">Already have an Account? <a class="close-modal" data-toggle="modal" href="#loginModal"> Sign In Now!</a></p>
+                <label id="errormsg2" class="errmsg"></label>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+	<script
+		  src="https://code.jquery.com/jquery-3.4.1.min.js"
+		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="/js/modals_change.js"></script>
+		<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script src="/js/jquery-2.1.3.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	
+</body>
+<script src="/js/contest_countdown.js"></script>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Submit | CodeNext</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+
+    <!-- CSS
+   ================================================== -->
+  
+   <link rel="stylesheet" href="/css/vendor.css"> 
+    
+  
+   
+
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   
+    
+    <link rel="stylesheet" type="text/css" href="/css/submitprob.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script id="result" type="text/x-handlebars-template">
+        <tr>
+			<td> {{number}} </td>
+            <td> {{time}} </td>
+            <td> {{memory}} </td>
+			<td> {{result}} </td>
+		</tr>
+    </script>
+	<link rel="stylesheet" type="text/css" href="/css/grid.css">
+</head>
+
+<body id="bg-wrap">
+    
+    <div class="main">
+    <div class="submit-container">
+        <img onclick="history.back()" id ="back-btn" src="https://img.icons8.com/ios/50/FFFFFF/circled-left-2.png"/>
+        <div id="prob-no">Submit your solution for the problem </div>
+        <div id="editor">
+#include &#60;bits/stdc++.h&#62;
+using namespace std;
+
+int main(){
+
+    return 0;
+}
+</div>
+        <div class="submit">
+            <select id="language">
+                <% for (var i=0; i< langlist.length ; i++) { %>
+                    <option value="<%= langlist[i].id %>" >
+                        <%= langlist[i].name %>
+                    </option>
+                <% } %>
+            </select>
+            <button id="side-btn" type="button" class="btn btn-primary btn-md" onclick="submitSolution();">Submit</button>
+            <button id="side-btn" type="button" class="btn btn-primary btn-md" onclick="goBack()">Cancel</button>
+        </div>
+    </div>
+    <div id="running" style="display: none;">
+        <p id="p-run">Running...</p>        
+    </div>
+    <div class="submit-result">
+        <table id="res-table" class="table is-bordered is-striped is-narrow is-hoverable sortable">
+            <thead>
+                <tr>
+                    <th><a><i class="fa fa-sort" aria-hidden="true"></i> Testcase No.</a></th>
+                    <th><a><i class="fa fa-sort" aria-hidden="true"></i> Time (sec)</a></th>
+                    <th><a><i class="fa fa-sort" aria-hidden="true"></i> Memory (KB)</a></th>
+                    <th><a><i class="fa fa-sort" aria-hidden="true"></i> Result</a></th>
+                </tr>
+            </thead>
+            <tbody id="res-ans">
+            </tbody>
+        </table>
+    </div>
+    </div>
+   
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/dracula");
+    editor.session.setMode("ace/mode/c_cpp");
+    $("#language").change(function () {
+            var lang_enum = $(this).val();
+            if (lang_enum == 10 || lang_enum == 4) {
+                editor.session.setMode("ace/mode/c_cpp");
+                var dummycpp = 
+`#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    // Your code starts here
+
+    return 0;
+}`
+                var dummyc = 
+`#include <stdio.h>
+int main(void){
+    // Your code starts here
+
+    return 0;
+}`
+                if(lang_enum == 4)
+                    editor.setValue(dummyc);
+                else
+                    editor.setValue(dummycpp);
+            }
+            else if (lang_enum == 34 || lang_enum == 36) {
+                editor.session.setMode("ace/mode/python");
+                editor.setValue("#Your code here")
+            }
+            else if(lang_enum ==29){
+                editor.session.setMode("ace/mode/javascript");
+                var dummyjavascript =
+`process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// your code goes here
+`            
+            editor.setValue(dummyjavascript);
+            }
+            else if(lang_enum==17) {
+                editor.session.setMode("ace/mode/csharp");
+                var dummycsharp=
+`using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+	}
+}   
+`
+            editor.setValue(dummycsharp);
+            }
+
+            else if(lang_enum==22){
+                editor.session.setMode("ace/mode/golang");
+                var dummygo =
+`package main
+import "fmt"
+
+func main(){
+	// your code goes here
+}
+`
+            editor.setValue(dummygo);
+            }
+
+            else if (lang_enum == 27) {
+                editor.session.setMode("ace/mode/java");
+                var dummyjava = 
+`public class Main {
+    public static void main(String[] args) {
+        System.out.println("hello, world");
+    }
+}`
+                editor.setValue(dummyjava);
+            }
+        });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+<script src="/js/contest_solution_submit.js"></script>
+
+</html>

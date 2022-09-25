@@ -1,0 +1,68 @@
+#signup-content{
+  font-family: 'Montserrat', sans-serif;
+}
+.form-signin {
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 20px 0px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da !important;
+  margin-bottom: 20px;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.errmsg {
+  color: red;
+}
+
+#sign-up-btn{
+  width: 3rem;
+  height: 4rem;
+  border: 0cm;
+  font-size: 3rem;
+  background-color: white;
+  opacity: 0.8;
+  margin-bottom: 0%;
+}
+
+#sign-up-btn:hover{
+  opacity: 1;
+  transition:all 300ms ease-in-out;
+}
+
+#btn-wrap{
+  display: flex;
+  justify-content: right !important;
+  padding: 1rem 1rem 0 0 !important;
+  border-bottom: 0px !important;
+}
+
+#sign-btn{
+  height: 4rem;
+  font-size: 16px;
+}

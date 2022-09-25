@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin | CodeNext</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" type="text/css" href="/css/base.css">
+   <link rel="stylesheet" type="text/css" href="/css/vendor.css"> 
+   <link rel="stylesheet" type="text/css" href="/css/main.css">  
+   <link rel="stylesheet" type="text/css" href="/css/problem_add.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body id="wrap">
+    <a href="/admin">
+        <img id ="back-btn" src="https://img.icons8.com/ios/50/FFFFFF/circled-left-2.png"/>
+    </a>
+    <div class="box" id="wrap">
+        <div class="a-container">
+            <div class="a-btn">
+                <a id="links" href="/admin/add" style="font-size: 15px;">ADD PROBLEM</a> 
+            </div>
+            <div class="a-btn">
+                <a id="links" href="/admin/new-contest" style="font-size: 15px;">HOST NEW CONTEST</a> 
+            </div>
+            <div class="a-btn">
+                <a id="links" href="/admin/my-contests" style="font-size: 15px;">SHOW/EDIT CONTESTS</a> 
+            </div>
+            <div class="a-btn-active">
+                <a id="links" href="/admin/manage-admins" style="font-size: 15px;">MANAGE ADMINS</a> 
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+    <div class="grid-content">
+        <div class="manage-admins-table">
+            <table class="table table-hover sortable">
+                <h1 style="padding-top: 30px;"><strong style="font-size: 24px;"id="h">Current Admins</strong></h1>
+                <hr>
+                <thead>
+                    <tr id="table-row">
+                        <th scope="col"><a id="head-anchor"><i class="fa fa-sort" aria-hidden="true"></i> #</a></th>
+                        <th scope="col"><a id="head-anchor"><i class="fa fa-sort" aria-hidden="true"></i> Username</a></th>
+                        <th scope="col"><a id="head-anchor"><i class="fa fa-sort" aria-hidden="true"></i> Name</a></th>
+                        <th scope="col"><a id="head-anchor"><i class="fa fa-sort" aria-hidden="true"></i> Email</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < data.length; i++) { %>
+                    <tr id="table-row">
+                        <td id="table-anchor"><%= i + 1 %></td>
+                        <td id="table-anchor"><%= data[i].username %></td>
+                        <td id="table-anchor"><%= data[i].name %></td>
+                        <td id="table-anchor"><%= data[i].email %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="admin-manage-form-wrapper">
+            <form name="add-admin" method="POST" action="/admin/add-admin">
+                <div id="submit-wrap" class="form-row">
+                    <div class="col" id="inp-field">
+                        <input id="text-area" type="text" name="username" class="form-control" placeholder="username">
+                    </div>
+                    <button id="admin-check" type="submit" class="btn btn-success">Add admin</button>
+                </div>
+            </form>
+            <form name="remove-admin" method="POST" action="/admin/remove-admin">
+                <div class="form-row" id="submit-wrap">
+                    <div class="col" id="inp-field">
+                        <input id="text-area" type="text" name="username" class="form-control" placeholder="username">
+                    </div>
+                    <button id="admin-check" type="submit" class="btn btn-danger">Remove admin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <div id="preloader"> 
+        <div id="loader"></div>
+    </div> 
+
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/modals_change.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<!-- Java Script
+	 ================================================== --> 
+	 <script src="/js/jquery-2.1.3.min.js"></script>
+	 <script src="/js/plugins.js"></script>
+	 <script src="/js/main.js"></script>
+</body>
+<script>
+    var URL = window.location.href;
+    if (URL.search("msg=") != -1) {
+        var message = URL.split("msg=")[1];
+        message = message.replace(/-/g, " ");
+        window.alert(message);
+        window.open("/admin/manage-admins", "_self");
+    }
+</script>
+
+</html>

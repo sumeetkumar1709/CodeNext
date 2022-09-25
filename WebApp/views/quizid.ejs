@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Rules | Quiz</title>
+    <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/quizid.css">
+</head>
+
+<% var col=[{f:"#6A82FB",s:"#FC5C7D"},{f:"#2ebf91",s:"#8360c3"},{f:"#E94057",s:"#8A2387"},
+{f:"#BD3F32",s:"#CB356B"},{f:"#B06AB3",s:"#4568DC"},{f:"#00dbde",s:"#fc00ff"},
+{f:"#F9D423",s:"#FF4E50"},{f:"#ff5858",s:"#f857a6"},{f:"#EA384D",s:"#D31027"},
+{f:"#753a88",s:"#cc2b5e"}] %>
+
+<% let x = Math.floor((Math.random() * 10) );%>
+<body style="--c:<%=col[x].f%>; --cf:<%=col[x].s%>;">
+    
+    <div class="rules-wrapper">
+        <h1>RULES:</h1>
+        <div id="detail">
+            <p><%=data.questionCount%> Questions <%=data.duration%> min<p>
+            <img src="https://img.icons8.com/ios/25/000000/clock--v1.png"/>
+        </div>
+        
+
+        <textarea readonly class="text"><%=data.rules%></textarea>
+        <a href="/quiz/running/<%= data.quizID%>"><button id="final-btn" class="bn632-hover bn18" >Start Quiz</button></a>	
+    </div>
+</body>
+
+   
+</html>

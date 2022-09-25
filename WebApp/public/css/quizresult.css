@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 10px;
+    background-color: #1b2431; 
+}
+body .intro-screen, html .intro-screen {
+      width: 100%;
+      height: 200vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+
+      body .intro-screen .intro-screen__titel, html .intro-screen .intro-screen__titel {
+        height: 100vh;
+        width: 100%;
+        display: block;
+        top: -0.2rem;
+        position: relative;
+        background-color: #ff6e48;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        body .intro-screen .intro-screen__titel div, html .intro-screen .intro-screen__titel div {
+          font-size: 3rem;
+          color: #ffffff; }
+      body .intro-screen .intro-screen__shape, html .intro-screen .intro-screen__shape {
+        width: 100%;
+        margin: -0.5rem 0 0 0;
+        position: relative; }
+        body .intro-screen .intro-screen__shape .shape, html .intro-screen .intro-screen__shape .shape {
+          height: 100vh;
+          width: 100%;
+          display: block;
+          fill: #ff6e48; }
+  
+
+#start{
+    cursor:pointer;
+}
+
+
+.bn15 {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 26px ;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    margin-left: 30%;
+  }
+
+  .bn15:hover{
+    opacity: 0.8;
+    transition: all 300ms ease-in-out;
+  }
+
+  .txt{
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 40px !important;
+    letter-spacing: 0.1em;
+  }
+
+
+
+
+
+  #res{
+    position: absolute;
+    height:600px;
+    width:400px;
+    padding-top: 20%;
+    padding-left: 95%;
+    background-color: #ff6e48;
+    display: flex;
+  }
+
+  #sc{
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 40px !important;
+    position: absolute;
+    color:#ffffff;
+    left:35%;
+  }

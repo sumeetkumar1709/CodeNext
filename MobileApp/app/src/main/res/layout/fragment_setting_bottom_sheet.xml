@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/anothergradient"
+    style="@style/AppBottomSheetDialogTheme">
+
+    <View
+        android:layout_width="35dp"
+        android:layout_height="4dp"
+        android:backgroundTint="@color/icon_color"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <LinearLayout
+            android:id="@+id/admin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_weight="6"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                android:src="@drawable/ic_baseline_admin_panel_settings_24"
+                app:tint="@color/background2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Admin Panel"
+                android:gravity="center|left"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/background2"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:src="@drawable/ic_baseline_notifications_active_24"
+                app:tint="@color/background2"
+                android:alpha="0.8"
+
+                android:id="@+id/notificationBell"/>
+
+            <TextView
+                android:id="@+id/notification_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:layout_marginStart="5dp"
+
+                android:text="Edit Profile"
+                android:textColor="@color/background2"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_settings"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+
+                android:layout_weight="6"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+
+                android:src="@drawable/ic_baseline_add_24"
+                app:tint="@color/background2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Invite"
+                android:gravity="center|left"
+                android:layout_marginStart="5dp"
+
+                android:textColor="@color/background2"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/help_settings"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:padding="1.2dp"
+                android:layout_weight="6"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+
+                android:src="@drawable/ic_baseline_help_outline_24"
+                app:tint="@color/background2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Help Center"
+                android:gravity="center|left"
+                android:layout_marginStart="5dp"
+
+                android:textColor="@color/background2"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="5dp"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_weight="6"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="0dp"
+                android:alpha="0.8"
+                android:src="@drawable/ic_baseline_login_24"
+                app:tint="@color/background2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Logout"
+                android:gravity="center|left"
+                android:textSize="16sp"
+                android:textColor="@color/background2"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

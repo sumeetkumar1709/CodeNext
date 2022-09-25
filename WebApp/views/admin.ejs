@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin | CodeNext</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.css"> 
+   <link rel="stylesheet" href="css/main.css">  
+   <link rel="stylesheet" href="css/admin.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+	<link rel="icon" href="./images/logo.png" type="image/x-icon">
+
+</head>
+
+<body id="adm">
+    
+
+    <header> 
+
+        <div class="header-logo">
+           <a href="/">CodeNext</a>
+        </div> 
+ 
+         <a id="header-menu-trigger" href="#0">
+              <span style="color:#ee5d6e" class="header-menu-text">Menu</span>
+               <span class="header-menu-icon"></span>
+         </a> 
+ 
+         <nav id="menu-nav-wrap">
+ 
+             <a href="#0" class="close-button" title="close"><span>Close</span></a>	
+ 
+            <h3>CodeNext</h3>  
+ 
+             <ul class="nav-list">
+                 <li class="current"><a href="/" title="">Home</a></li>
+                 <li><a  href="/problems/all" title="">Practice</a></li>
+                 <li><a href="/contests" title="">Contests</a></li>
+                 <li><a  href="/rankings" title="">Rankings</a></li>
+                 <li><a href="/quiz" title="">Quiz</a></li>
+                 <li><a  href="/ide" title="">IDE</a></li>
+
+                 <% if (locals.user && locals.user.isAdmin === true) { 
+                    %>	 <li><a  href="/admin"" title="">Admin</a></li>	<% } %>
+                 
+                 <% if (locals.user) { %>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <li><a href="/user/logout">Sign Out</a></li>
+
+                    <% } else { %>
+
+                    <li><a data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+                    <li><a data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
+                    <% } %>
+                 
+             </ul>				
+ 
+             <ul class="header-social-list">
+              <li>
+                  <a href="#"><i class="fa fa-facebook-square" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-twitter" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-instagram" id = "nav-icon"></i></a>
+              </li>
+             <li>
+                 <a href="#"><i class="fa fa-behance" id = "nav-icon"></i></a>
+             </li>
+                      
+           </ul>		
+ 
+         </nav>  <!-- end #menu-nav-wrap -->
+ 
+     </header> <!-- end header -->  
+     
+
+   <!-- horizontal -->
+
+<div class="box-container">
+    <a href="/admin/add">
+        <div class="flip">
+            <div class="front" style="background-image: url(/images/add-ques.jpg)">
+               
+            </div>
+            <div style="--clr:#FFCD00" class="back">
+                    <h2>Add Question</h2>
+                    <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>           
+            </div>
+        </div>
+    </a>
+    
+    <a href="/admin/new-contest">
+        <div class="flip">
+            <div class="front" style="background-image: url(/images/new-contest.jpg)">
+               
+            </div>
+            <div style="--clr:#20C4C6" class="back">
+               <h2>Host New Contest</h2>
+               <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>
+            </div>
+        </div>
+    </a>
+    
+    <a href="/admin/my-contests">
+        <div class="flip">
+            <div class="front" style="background-image: url(images/edit.jpg)">
+               
+            </div>
+            <div style="--clr:#FF735C" class="back">
+               <h2>Show/Edit Contests</h2>
+               <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>
+               </div>
+        </div>
+    </a>
+    
+    
+    <br>
+    <br>
+    
+    <!-- vertical -->
+   
+    <a href="/admin/manage-admins">
+        <div class="flip flip-vertical">
+            <div class="front" style="background-image: url(images/admin.jpg)">
+            </div>
+            <div style="--clr:#00DFC2" class="back">
+               <h2>Manage Admins</h2>
+               <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>
+            </div>
+        </div>
+    </a>
+    
+    <a href="/admin/new_quiz">
+        <div class="flip flip-vertical">
+            <div class="front" style="background-image: url(images/quiz.jpg)">
+               
+            </div>
+            <div style="--clr:#FFFFFF" class="back">
+               <h2>Create Quiz</h2>
+               <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>
+            </div>
+        </div>
+    </a>
+    
+    <a href="/admin/edit_quiz">
+        <div class="flip flip-vertical">
+            <div class="front" style="background-image: url(images/edit.jpg)">
+               
+            </div>
+            <div style="--clr:#FF735C" class="back">
+               <h2>Show/Edit Quiz</h2>
+               <img src="https://img.icons8.com/ios/40/4D4D4D/end-button.png"/>
+            </div>
+        </div>
+    </a>
+    
+    
+</div>
+
+
+
+
+    <script
+		  src="https://code.jquery.com/jquery-3.4.1.min.js"
+		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="/js/modals_change.js"></script>
+		<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+		  <!-- Java Script
+		   ================================================== --> 
+		   <script src="js/jquery-2.1.3.min.js"></script>
+		   <script src="js/plugins.js"></script>
+		   <script src="js/main.js"></script>
+    
+</body>
+
+</html>

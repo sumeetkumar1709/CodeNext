@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/sheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    <title>Edit | CodeNext</title>
+    <script id="fileTemplate" type="text/x-handlebars-template">
+        <div class="box" >
+            <h2 class="subtitle">TestFile</h2>
+            <textarea class="textarea stdin" placeholder="Stdin">{{stdin}}</textarea>
+            <textarea class="textarea stdout" placeholder="Stdout">{{stdout}}</textarea>
+        </div>
+    </script>
+</head>
+
+<body>
+    <header>
+        <% include partials/header %>
+    </header>
+    <div class="grid-content content">
+        <div class="box">
+            <h1 class="title center">Edit Question</h1>
+            <hr>
+            <h2 class="subtitle">Name</h2>
+            <textarea class="textarea title" rows="1" id="QuesName"><%= ques.name %></textarea>
+
+            <div class="form-group">
+                <h2 class="subtitle">Visibility</h2>
+                <select class="form-control" id="isVisible">
+
+                    <% if(ques.isVisible) { %>
+                    <option value="true" selected>true</option>
+                    <option value="false">false</option>
+                    <% } else { %>
+                    <option value="true">true</option>
+                    <option value="false" selected>false</option>
+                    <% } %>
+                </select>
+            </div>
+            
+            <h2 class="subtitle">Description <span style="color:red">*</span></h2>
+            <textarea class="textarea" id="Description"><%= ques.description %></textarea>
+            <h2 class="subtitle">Input Format</h2>
+            <textarea class="textarea" id="InputFormat"><%= ques.inputFormat %></textarea>
+            <h2 class="subtitle">Output Format</h2>
+            <textarea class="textarea" id="OutputFormat"><%= ques.outputFormat %></textarea>
+            <h2 class="subtitle">Constraints</h2>
+            <textarea class="textarea" id="Constraints"><%= ques.constraints %></textarea>
+            <h2 class="subtitle">Sample Input</h2>
+            <textarea class="textarea" id="SampleInput"><%= ques.sampleInput %></textarea>
+            <h2 class="subtitle">Sample Output</h2>
+            <textarea class="textarea" id="SampleOutput"><%= ques.sampleOutput %></textarea>
+            <h2 class="subtitle">Explanation</h2>
+            <textarea class="textarea" id="Explanation"><%= ques.explanation %></textarea>
+            <h2 class="subtitle">Difficulty</h2>
+            <select id="DifficultyLevel">
+                <option value="0" <% if (ques.difficulty == 0) { %>selected<% } %> >Beginner</option>
+                <option value="1" <% if (ques.difficulty == 1) { %>selected<% } %> >Easy</option>
+                <option value="2" <% if (ques.difficulty == 2) { %>selected<% } %> >Medium</option>
+                <option value="3" <% if (ques.difficulty == 3) { %>selected<% } %> >Hard</option>
+            </select>
+            <h2 class="subtitle">Problem Setter</h2>
+            <textarea class="textarea" rows="1" id="ProblemSetter" disabled><%= ques.problemSetter %></textarea>
+            <h2 class="subtitle">Time Limit (seconds) <span style="color: red">*</span></h2>
+            <input type="number" min="1" class="textarea" rows="1" id="TimeLimit" value="<%= ques.timeLimit %>"></input>
+            <h2 class="subtitle">Memory Limit (kB) <span style="color: red">*</span></h2>
+            <input type="number" min="1" class="textarea" rows="1" id="MemoryLimit" value="<%= ques.memoryLimit %>"></input>
+            <h2 class="subtitle">Tags</h2>
+            <textarea class="textarea" rows="1" id="Tags"><%= ques.tags %></textarea>
+            <h2 class="subtitle">Editorial</h2>
+            <textarea class="textarea" rows="1" id="Editorial"><%= ques.editorial %></textarea>
+            <hr>
+            <h2 class="subtitle">Edit existing testcases</h2>
+            <!-- <input type="file" id="Testcases" accept="text/plain" multiple="multiple" /> -->
+            <!-- <a class="button is-success is-rounded" id="add">Add</a>
+            <a class="button is-danger is-rounded" id="rem">Remove</a> -->
+            <div id="testcases"></div>
+            <br>
+            <h2 class="subtitle">Add new testcases</h2>
+            <h4 class="">Add testcases through files</h4>
+            <input type="file" id="NewTestcasesFiles" accept="text/plain" multiple="multiple" /><br><br>
+            <h4 class="">Add testcases through textbox</h4>
+            <a class="button is-success is-rounded" id="add">Add</a>
+            <a class="button is-danger is-rounded" id="rem">Remove</a> <br> <br>
+            <div id="newtestcases"></div>
+            <button class="button is-link submit">Publish changes</button>
+        </div>
+    </div>
+    <footer>
+        <% include partials/footer %>
+    </footer>
+</body>
+<script>
+    var prev_tc = <%- JSON.stringify(t_case)%>;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/problem_edit.js" defer></script>
+
+</html>

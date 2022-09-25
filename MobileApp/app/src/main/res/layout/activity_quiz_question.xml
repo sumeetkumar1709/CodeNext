@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/anothergradient1"
+    tools:context=".QuizQuestionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/background2" />
+
+        <TextView
+            android:id="@+id/quiznameinside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="GetIT 1.0"
+            android:textColor="@color/background2"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/quiznameinside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/quiznameinside" />
+
+        <!--Text implementation in center of the progress bar-->
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="30dp"
+                app:cardBackgroundColor="@color/AppTextColour"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Points: 3"
+                        android:textColor="@color/background2"
+                        android:textSize="13dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/numberofquestions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="/10"
+                        android:textColor="@color/background2"
+                        android:textSize="13dp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@+id/save"
+                        app:layout_constraintEnd_toStartOf="@+id/save"
+                        app:layout_constraintTop_toTopOf="@+id/save" />
+
+                    <TextView
+                        android:id="@+id/questionnumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="1dp"
+                        android:text="1"
+                        android:textColor="@color/background2"
+                        android:textSize="13dp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@+id/numberofquestions"
+                        app:layout_constraintEnd_toStartOf="@+id/numberofquestions"
+                        app:layout_constraintTop_toTopOf="@+id/numberofquestions" />
+
+                    <ImageView
+                        android:id="@+id/save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:src="@drawable/ic_baseline_bookmark_border_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/points"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/points"
+                        app:tint="@color/background2" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/background3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/points" />
+
+
+                    <TextView
+                        android:id="@+id/quizquestiondisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:ellipsize="end"
+                        android:hint="Why is Mahendra Singh Dhoni a cool captain?"
+                        android:lineSpacingExtra="1dp"
+
+                        android:maxWidth="300dp"
+                        android:textColor="@color/background2"
+                        android:textSize="16dp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/points"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="180dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/quizquestiondisplay" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/op1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="40dp"
+                        app:cardBackgroundColor="#0079DA"
+                        app:cardCornerRadius="6dp"
+                        app:layout_constraintStart_toStartOf="@+id/quizquestiondisplay"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView11">
+
+                        <TextView
+                            android:id="@+id/option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:hint="A. He is a Legend"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:textColor="@color/background2"
+                            android:textSize="14dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/op2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        app:cardBackgroundColor="#0079DA"
+                        app:cardCornerRadius="6dp"
+
+                        app:layout_constraintStart_toStartOf="@+id/quizquestiondisplay"
+                        app:layout_constraintTop_toBottomOf="@+id/op1">
+
+                        <TextView
+                            android:id="@+id/option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:hint="B. He is a Legend"
+
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:textColor="@color/background2"
+                            android:textSize="14dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/op3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        app:cardBackgroundColor="#0079DA"
+                        app:cardCornerRadius="6dp"
+
+                        app:layout_constraintStart_toStartOf="@+id/quizquestiondisplay"
+                        app:layout_constraintTop_toBottomOf="@+id/op2">
+
+                        <TextView
+                            android:id="@+id/option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:hint="C. He is a Legend"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:textColor="@color/background2"
+                            android:textSize="14dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/op4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:paddingBottom="20dp"
+                        app:cardBackgroundColor="#0079DA"
+                        app:cardCornerRadius="6dp"
+
+                        app:layout_constraintStart_toStartOf="@+id/quizquestiondisplay"
+                        app:layout_constraintTop_toBottomOf="@+id/op3">
+
+                        <TextView
+                            android:id="@+id/option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="left|center_vertical"
+                            android:hint="D. He is a Legend"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:textColor="@color/background2"
+                            android:textSize="14dp" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/submitthisquestion"
+                        android:layout_width="100dp"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="56dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/buttonbg"
+                        android:backgroundTint="#009688"
+                        android:gravity="center"
+                        android:text="Submit"
+                        android:textColor="@color/background2"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/op4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

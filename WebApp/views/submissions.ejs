@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Submissions | CodeNext</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="/css/signin.css"> 	
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css"  href="/css/main.css">  
+   <link rel="stylesheet" type="text/css"  href="/css/profile.css">  
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	
+	<header> 
+
+		<div class="header-logo">
+		   <a href="/">CodeNext</a>
+		</div> 
+ 
+		 <a id="header-menu-trigger" href="#0">
+			  <span id="temp" class="header-menu-text">Menu</span>
+			   <span class="header-menu-icon"></span>
+		 </a> 
+ 
+		 <nav id="menu-nav-wrap">
+ 
+			 <a href="#0" class="close-button" title="close"><span>Close</span></a>	
+ 
+			<h3>CodeNext</h3>  
+ 
+			 <ul class="nav-list">
+				 <li class="current"><a href="/" title="">Home</a></li>
+				 <li><a  href="/problems/all" title="">Practice</a></li>
+				 <li><a href="/contests" title="">Contests</a></li>
+				 <li><a  href="/rankings" title="">Rankings</a></li>
+				 <li><a  href="/ide" title="">IDE</a></li>
+
+				 <% if (locals.user && locals.user.isAdmin === true) { 
+					%>	 <li><a  href="/admin"" title="">Admin</a></li>	<% } %>
+				 
+				 <% if (locals.user) { %>
+					<li><a href="/user/profile">Profile</a></li>
+					<li><a href="/user/logout">Sign Out</a></li>
+
+					<% } else { %>
+
+					<li><a data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+					<li><a data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
+					<% } %>
+				 
+			 </ul>				
+ 
+			 <ul class="header-social-list">
+			  <li>
+				  <a href="#"><i class="fa fa-facebook-square" id = "nav-icon"></i></a>
+			  </li>
+			  <li>
+				  <a href="#"><i class="fa fa-twitter" id = "nav-icon"></i></a>
+			  </li>
+			  <li>
+				  <a href="#"><i class="fa fa-instagram" id = "nav-icon"></i></a>
+			  </li>
+			 <li>
+				 <a href="#"><i class="fa fa-behance" id = "nav-icon"></i></a>
+			 </li>
+			  <li>
+				  <a href="#"><i class="fa fa-dribbble" id = "nav-icon"></i></a>
+			  </li>	         
+		   </ul>		
+ 
+		 </nav>  <!-- end #menu-nav-wrap -->
+ 
+	 </header> <!-- end header -->  
+
+
+
+	<div id="main-body" class="grid-content content">
+		<div class="box">
+			<div id="head-wrap">
+				<h2 id="subm-head" class="title center">
+					<% var s = locals.user.username %>
+					<%= s.charAt(0).toUpperCase() + s.slice(1) %> Submissions</h2>
+				<img src="https://img.icons8.com/ios-filled/40/ee5d6e/submit-document.png"/>
+			</div>
+			
+			<hr>
+			<table id="submission-history" class="table sortable">
+				<thead>
+					<tr>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Submission ID</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Date</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Problem</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Language</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Verdict</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Time</a></th>
+						<th><a><i class="fa fa-sort" aria-hidden="true"></i> Memory</a></th>
+					</tr>
+				</thead>
+				<tbody id="show-all-contests">
+					<% for(var i = 0; i < data.length; i++) { %>
+					<tr>
+						<td>
+							<a href="/user/submission/<%= data[i].subID %>"><%= data[i].subID %></a>
+						</td>
+						<td>
+							<%= data[i].date %>
+						</td>
+						<td>
+							<a href="/problem/<%=data[i].qID%>" target="_blank">
+								<%= data[i].qID %></a>
+						</td>
+						<td>
+							<%= data[i].language %>
+						</td>
+						<td>
+							<span style="color: darkblue">
+								<% if(data[i].verdict === "Accepted") { %>
+								<strong style="color:rgb(38, 134, 0);">
+									<% } %>
+									<%= data[i].verdict %>
+									<% if(data[i].verdict === "Accepted") { %>
+								</strong>
+								<% } %>
+							</span>
+						</td>
+						<td>
+							<%= data[i].time %> s
+						</td>
+						<td>
+							<%= data[i].memory %> KB
+						</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script
+		  src="https://code.jquery.com/jquery-3.4.1.min.js"
+		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="/js/modals_change.js"></script>
+		<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+		  <!-- Java Script
+		   ================================================== --> 
+		   
+		   <script src="/js/plugins.js"></script>
+		   <script src="/js/main.js"></script>
+
+        	
+			
+			<script src="/js/pie-script.js"></script>
+</body>
+
+</html>

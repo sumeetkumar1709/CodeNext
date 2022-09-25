@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>EDIT Contest | CodeNext</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" type="text/css" href="/css/base.css">
+   <link rel="stylesheet" type="text/css" href="/css/vendor.css"> 
+   <link rel="stylesheet" type="text/css" href="/css/main.css">  
+   <link rel="stylesheet" type="text/css" href="/css/problem_add.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+
+</head>
+
+<body id="wrap">
+	<header> 
+
+        <div class="header-logo">
+           <a href="/">CodeNest</a>
+        </div> 
+ 
+         <a id="header-menu-trigger" href="#0">
+              <span class="header-menu-text">Menu</span>
+               <span class="header-menu-icon"></span>
+         </a> 
+ 
+         <nav id="menu-nav-wrap">
+ 
+             <a href="#0" class="close-button" title="close"><span>Close</span></a>	
+ 
+            <h3>CodeNest</h3>  
+ 
+             <ul class="nav-list">
+                 <li class="current"><a href="/" title="">Home</a></li>
+                 <li><a  href="/problems/all" title="">Practice</a></li>
+                 <li><a  href="/rankings" title="">Rankings</a></li>
+                 <li><a href="/quiz" title="">Quiz</a></li>
+                 <li><a  href="/ide" title="">IDE</a></li>
+
+                 <% if (locals.user && locals.user.isAdmin === true) { 
+                    %>	 <li><a  href="/admin"" title="">Admin</a></li>	<% } %>
+                 
+                 <% if (locals.user) { %>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <li><a href="/user/logout">Sign Out</a></li>
+
+                    <% } else { %>
+
+                    <li><a data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+                    <li><a data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
+                    <% } %>
+                 
+             </ul>				
+ 
+             <ul class="header-social-list">
+              <li>
+                  <a href="#"><i class="fa fa-facebook-square" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-twitter" id = "nav-icon"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-instagram" id = "nav-icon"></i></a>
+              </li>
+             <li>
+                 <a href="#"><i class="fa fa-behance" id = "nav-icon"></i></a>
+             </li>
+              <li>
+                  <a href="#"><i class="fa fa-dribbble" id = "nav-icon"></i></a>
+              </li>	         
+           </ul>		
+ 
+         </nav>  <!-- end #menu-nav-wrap -->
+ 
+     </header> <!-- end header -->  
+	<div class="main" id="edit-contest-wrap">
+	<form class="contest-form" action="/admin/edit-contest/<%= data.code %>" method="POST">
+		<h1><strong style="font-weight:700;font-size:24px; font-family:Arial, Helvetica, sans-serif" id="h">EDIT CONTEST</strong></h1>
+		Contest Code: <span id="contest-code" name="contestCode"><%= data.code %></span><br>
+		Contest Name: <input id="text-area" type="text" name="contestName" value="<%= data.name %>"><br>
+		Date: <input id="text-area" type="date" name="date" value="<%= data.YY %>-<%= data.MM %>-<%= data.DD %>"><br>
+		Starting Time: <input id="text-area" type="time" name="startTime" value="<%= data.TT %>"><br>
+		Duration (minutes): <input id="text-area" type="text" name="duration" value="<%= data.duration %>"><br>
+		Make the contest visible to the public? (1 for yes, 0 for no) <input id="text-area" type="text" name="visibility" value="<%= data.visible %>"><br>
+		Problems to be included (qID "," comma separated): <input type="text" id="text-area" name="problemsID" value="<%= data.problemsID %>"><br>
+		<button id="edit-btn" type="submit" class="btn btn-danger btn-md">Edit Contest</button>
+
+	</form>
+	</div>
+	
+	<div id="preloader"> 
+        <div id="loader"></div>
+    </div> 
+
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/modals_change.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<!-- Java Script
+	 ================================================== --> 
+	 <script src="/js/jquery-2.1.3.min.js"></script>
+	 <script src="/js/plugins.js"></script>
+	 <script src="/js/main.js"></script>
+
+</body>
+
+</html>

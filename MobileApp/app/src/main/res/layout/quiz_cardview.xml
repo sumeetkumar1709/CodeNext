@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardparentquiz"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:elevation="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="24dp"
+        app:strokeColor="#959595"
+        app:cardBackgroundColor="@color/AppTextColour"
+
+        android:layout_marginRight="24dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+          >
+
+            <ImageView
+                android:id="@+id/imagequiz"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:src="@color/yellow_icon_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageuiz"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:src="@color/black"
+                android:alpha="0.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/quizname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:maxWidth="120dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="CharAtC++"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="26dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="4dp"
+                android:visibility="invisible"
+                android:id="@+id/leaderboard"
+                android:src="@drawable/ic_leaderboard"
+                app:layout_constraintBottom_toBottomOf="@+id/quizname"
+                app:layout_constraintStart_toEndOf="@+id/quizname"
+                app:layout_constraintTop_toTopOf="@+id/quizname" />
+
+            <TextView
+                android:id="@+id/quiztopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="#cpp"
+                android:layout_marginTop="10dp"
+                android:textColor="#E1E1E1"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView8"
+                app:layout_constraintStart_toEndOf="@+id/imagequiz"
+                app:layout_constraintTop_toTopOf="@+id/cardView8" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="#BABABA"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imagequiz"
+                app:layout_constraintStart_toStartOf="@+id/quizname">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:padding="1dp"
+
+                    android:src="@drawable/ic_baseline_timer_24"
+                    app:tint="#009688" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/quizduration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="90 mins"
+                android:textColor="@color/AppTextColour"
+                android:textSize="12dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView5"
+                app:layout_constraintStart_toEndOf="@+id/cardView5"
+                app:layout_constraintTop_toTopOf="@+id/cardView5" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                app:cardBackgroundColor="#BABABA"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView5"
+                app:layout_constraintStart_toStartOf="@+id/quiztopic"
+                app:layout_constraintTop_toTopOf="@+id/quizduration">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_baseline_attach_file_24"
+                    app:tint="#009688" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/quizquestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="6dp"
+                android:text="3 Questions"
+                android:textColor="#D3D3D3"
+                android:textSize="12dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView4"
+                app:layout_constraintStart_toEndOf="@+id/cardView4"
+                app:layout_constraintTop_toTopOf="@+id/cardView4" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView6"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="#BABABA"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="@+id/quiztopic"
+                app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:padding="1dp"
+
+                    android:src="@drawable/ic_baseline_date_range_24"
+                    app:tint="#009688" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/quizdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="24 July"
+                android:layout_marginLeft="6dp"
+                android:textColor="#D3D3D3"
+                android:textSize="12dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView6"
+                app:layout_constraintStart_toEndOf="@+id/cardView6"
+                app:layout_constraintTop_toTopOf="@+id/cardView6" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView8"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="14dp"
+                app:cardBackgroundColor="#0079DA"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/difficultycardquiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:text="Easy"
+                    android:textColor="@color/background2"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/deletequiz"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_forever_24"
+                app:layout_constraintBottom_toBottomOf="@+id/quizquestions"
+                app:layout_constraintEnd_toEndOf="@+id/cardView8"
+                app:tint="@color/background2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

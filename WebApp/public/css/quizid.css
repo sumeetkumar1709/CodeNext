@@ -1,0 +1,111 @@
+body{
+    background: var(--cf);  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, var(--cf), var(--c));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, var(--cf), var(--c)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.rules-wrapper{
+    width:60%;
+    margin-top: 170px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    width:100%;
+    height:100%;
+    margin-left: 65%;
+    background-color: rgba(255,255,255,0.75);
+    border:2px solid transparent;
+    border-radius: 5px;
+    resize: none;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color:#010101;
+}
+
+.text:focus{
+    outline: none;
+    border:none;
+}
+
+h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color:#3e354d;
+
+    position: absolute;
+    top :10%;
+    left:20%;
+}
+
+
+
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3E354D;
+    cursor: pointer;
+    position: relative;
+    top:40%;
+    left:-50%;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn18 {
+    background-image: linear-gradient(
+      to right,
+      #14C1E9,
+      #A97EED,
+      #E9577E,
+      #F64F5A
+    );
+    box-shadow: 0 4px 15px 0 rgba(62, 53, 77, 0.75);
+  }
+
+
+  #detail{
+    position: absolute;
+    top:12%;
+    display: flex;
+    left:65%;
+  }
+
+  p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+    color:#3e354d;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 600;
+  }

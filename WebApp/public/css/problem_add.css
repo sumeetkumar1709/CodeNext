@@ -1,0 +1,532 @@
+
+#wrap{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#add-problem-body{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#t-wrap{
+    background-color: transparent;
+}
+
+.a-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    
+}
+
+.a-btn{
+    background-color: #D0163D;
+    width:240px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+}
+
+.a-btn:hover{
+    background-color:whitesmoke;
+    transition: all 350ms ease-in-out;
+    cursor: pointer;
+    
+}
+
+.a-btn:hover #links{
+    color:#0F0F12;
+    cursor: pointer;
+}
+
+
+#links{
+    text-decoration: none;
+    color:antiquewhite;
+    opacity: 0.87;
+}
+
+.a-btn-active{
+    background-color: #D0163D;
+    opacity: 0.65;
+    width:240px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+}
+
+.a-btn-active #links{
+    pointer-events: none;
+}
+
+#h{
+    padding-top: 40px;
+    color:#D0163D;
+}
+#s{
+    color:whitesmoke;
+    opacity: 0.82;
+}
+
+#QuesName{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#Description{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+
+#InputFormat{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#OutputFormat{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#Constraints{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#SampleInput{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#SampleOutput{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+#Explanation{
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    font-size: medium;
+}
+
+.state{
+    background-color: #325E6D;
+    height:52px;
+    color:whitesmoke;
+    font-size: medium;
+    border:1px solid transparent;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#isVisible{
+    background-color: #325E6D;
+    height:45px;
+    color:whitesmoke;
+    font-size: medium;
+    border:1px solid transparent;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#ProblemSetter{
+    background-color: #325E6D;
+    height:45px;
+    color:whitesmoke;
+    font-size: medium;
+    border:1px solid transparent;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+#Tags{
+    background-color: #325E6D;
+    height:45px;
+    color:whitesmoke;
+    font-size: medium;
+    border:1px solid transparent;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+#Editorial{
+    background-color: #325E6D;
+    height:45px;
+    color:whitesmoke;
+    font-size: medium;
+    border:1px solid transparent;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:80%;
+    padding-left: 20%;
+}
+
+#add{
+    width:20%;
+    height:40px;
+    color:#232526;
+    font-size: medium;
+}
+
+#rem{
+    width:20%;
+    height:40px;
+    color:#232526;
+    font-size: medium;
+}
+
+#btn-wrapper{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#sub{
+    height: 45px;
+    color:aliceblue;
+    font-size: medium;
+}
+
+.textarea {
+    background-color: #325E6D;
+    resize: none;
+    border:1px solid transparent;
+    color:whitesmoke;
+    font-size: medium;
+}
+
+
+#text-area{
+    background-color: #325E6D;
+    resize: none;
+    border:2px solid transparent;
+    border-radius: 5px;
+    color:white;
+    font-size: medium;
+    height: 40px;
+    margin-top: 10px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    font-size: medium;
+    width:100%;
+}
+
+#testcases>.box{
+    background-color: #15262D;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+}
+
+.subtitle{
+    color:whitesmoke !important;
+}
+
+
+#contest-heading{
+    padding-top: 40px;
+    color:#D0163D;
+    padding-bottom: 5px;
+}
+
+.contest-form{
+    color: whitesmoke !important;
+    opacity: 0.82;
+    font-size: 22px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+#create-contest{
+    width: 100%;
+    height: 50px;
+    color:aliceblue;
+    font-size: large;
+    font-weight: 600;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+}
+
+#tb{
+    margin-top: 20px;
+    background-color: #325E6D;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+}
+
+
+
+
+
+#w{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#table-a{
+    color:whitesmoke; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.82;
+    font-size: medium;
+}
+
+#col{
+    color:#9289F9;
+    font-size: larger;
+}
+
+#edit-contest-wrap{
+    padding-top: 100px;
+    padding-left: 15%;
+    padding-right: 15%;
+
+
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+#contest-code{
+    padding-left: 10px;
+    color:#9289F9;
+}
+
+#edit-btn{
+    width:100%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-content{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.table{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    background-color: #325E6D !important;
+}
+
+#table-row{
+    height:50px;
+}
+
+#head-anchor{
+    color:white;
+    font-size: 14px;
+}
+
+#table-anchor{
+    color:#9289F9;
+    font-size: 14px;
+}
+
+.admin-manage-form-wrapper{
+    padding-top: 40px;
+}
+
+#submit-wrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+}
+
+#inp-field{
+    width:80%;
+    height:50px;
+    padding-bottom: 10px;
+}
+
+#admin-check{
+    margin-top: 10px;
+    width:20%;
+    height:35px;
+}
+
+#problem-set{
+    padding-top: 3%;
+}
+
+#problem-set-row{
+    height:60px;
+}
+
+#a-question{
+    color:#D0C092;
+    opacity:1;
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+#a-question-list{
+    color:#9289F9;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#question-list{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 90%);
+}
+
+#problem-disp{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    background-color: #325E6D !important;
+}
+
+#prob-head{
+    padding-top: 40px;
+    font-size: 30px;
+    color: #D0163D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#limits{
+    padding-top: 40px;
+    font-size: 14px;
+    color:#9289F9;
+    opacity: 0.72;
+    
+}
+
+#problem-body{
+    padding-top: 20px;
+    font-size: 17px;
+    color:#D0C092;
+
+}
+
+
+#prob-subhead{
+    color:white;
+    opacity: 0.8;
+}
+
+#prob-disp-inp{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    background-color: #325E6D !important;
+    font-size: 17px;
+    color:#D0C092;
+}
+
+#sampleInputCopy{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    background-color: #325E6D !important;
+    font-size: 17px;
+    color:#D0C092;
+}
+
+#sampleOutputCopy{
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 40%);
+    background-color: #325E6D !important;
+    font-size: 17px;
+    color:#D0C092;
+}
+
+#ctc{
+    background-color: #000;
+    border:1px solid #fff;
+    color:#fff;
+}
+
+#prob-sub-btn{
+    width: 280px;
+    height: 40px;
+    font-size: 16px;
+}
+
+#sub-btn-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#contest-submit-btn{
+    width:30%;
+    height:40px;
+    margin-left: 35%;
+    font-size: 16px;
+}
+
+#bck-btn{
+    padding-left: 12%;
+    transform: scale(0.86, 0.86);
+    -ms-transform: scale(0.86, 0.86);
+    -webkit-transform: scale(0.86, 0.86);
+    padding-top: 40px;
+    cursor: pointer;
+}
+
+#back-btn{
+    position: absolute;
+    padding-top:2.1%;
+    padding-left: 2.1%;
+}
+
+#back-btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}

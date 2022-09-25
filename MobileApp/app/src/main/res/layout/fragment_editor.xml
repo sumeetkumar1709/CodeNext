@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/anothergradient"
+    tools:context=".Fragments.EditorFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+
+        android:layout_marginBottom="86dp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#474747"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:hint="C++"
+            android:paddingEnd="6dp"
+            android:textColor="#BABABA"
+            android:textColorHint="#BABABA"
+            android:textSize="12dp"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_divider_color="#E1E1E1"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.3dp"
+            app:spinner_item_array="@array/Lang"
+            app:spinner_item_height="36dp"
+            app:spinner_popup_animation="bounce"
+            app:spinner_popup_background="#303030"
+            app:spinner_popup_elevation="4dp" />
+
+
+        <com.amrdeveloper.codeview.CodeView
+            android:id="@+id/codeView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/black"
+            android:dropDownWidth="150dp"
+            android:dropDownHorizontalOffset="0dp"
+            android:dropDownSelector="#1E1E1E"
+            android:gravity="top|start"
+            android:textSize="14dp" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/runCode"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="30dp"
+        android:background="#333333"
+        android:layout_marginRight="24dp"
+        android:gravity="center"
+        android:text="Save"
+        android:textColor="#BABABA"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/restore"
+        android:layout_width="100dp"
+        android:layout_height="44dp"
+        android:background="#333333"
+        android:gravity="center"
+        android:text="Restore Saved Code"
+        android:textColor="#BABABA"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView"
+        app:layout_constraintTop_toTopOf="@+id/runCode" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="NOTE: Must save the code before running"
+        android:textColor="#BABABA"
+        android:textSize="13dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/runCode"
+        app:layout_constraintEnd_toStartOf="@+id/runCode"
+        app:layout_constraintStart_toEndOf="@+id/restore"
+        app:layout_constraintTop_toTopOf="@+id/runCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

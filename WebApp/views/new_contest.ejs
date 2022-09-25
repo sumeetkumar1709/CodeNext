@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>New Contest | CodeNext</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/signin.css"> 
+    
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" type="text/css" href="/css/base.css">
+   <link rel="stylesheet" type="text/css" href="/css/vendor.css"> 
+   <link rel="stylesheet" type="text/css" href="/css/main.css">  
+   <link rel="stylesheet" type="text/css" href="/css/problem_add.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+</head>
+
+<body id="wrap">
+	
+	<!-- <div class="main"> -->
+		<a href="/admin">
+			<img id ="back-btn" src="https://img.icons8.com/ios/50/FFFFFF/circled-left-2.png"/>
+		</a>
+	<div class="grid-content content small" id="add-problem-body">
+		<div class="box" id="t-wrap">
+            <div class="a-container">
+                <div class="a-btn">
+                    <a id="links" href="/admin/add" style="font-size: 15px;">ADD PROBLEM</a> 
+                </div>
+                <div class="a-btn-active">
+                    <a id="links" href="/admin/new-contest" style="font-size: 15px;">HOST NEW CONTEST</a> 
+                </div>
+                <div class="a-btn">
+                    <a id="links" href="/admin/my-contests" style="font-size: 15px;">SHOW/EDIT CONTESTS</a> 
+                </div>
+                <div class="a-btn">
+                    <a id="links" href="/admin/manage-admins" style="font-size: 15px;">MANAGE ADMINS</a> 
+                </div>
+                
+                
+            </div>
+			<div class="main-form">
+			<h1 id="contest-heading" class="title center"> New Contest</h1>
+			<hr>
+	<form class="contest-form" action="/admin/new-contest" method="POST">
+	Contest Code: <span style="color:red">*</span><br><input type="text" id="text-area" name="contestCode"><br>
+	Contest Name: <span style="color:red">*</span><br><input type="text" id="text-area" name="contestName"><br>
+	Date: <span style="color:red">*</span><br><input id="text-area" type="date" name="date"><br>
+	Starting Time: <span style="color:red">*</span><br><input type="time" id="text-area" name="startTime"><br>
+	Duration (minutes): <span style="color:red">*</span><br><input type="text"  id="text-area" name="duration"><br>
+	Make the contest visible to the public? (1 for yes, 0 for no) <span style="color:red">*</span><br><input type="text" id="text-area" name="visibility"><br>
+	Problems to be included (qID "," comma separated): <br><input type="text"  id="text-area" name="problemsID"><br>
+	<button id="create-contest" type="submit" class="btn btn-success btn-md">Create Contest</button>	
+	</form>
+	</div>
+	</div>
+	</div>
+	<!-- </div> -->
+
+	<div id="preloader"> 
+        <div id="loader"></div>
+    </div> 
+
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/modals_change.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<!-- Java Script
+	 ================================================== --> 
+	 <script src="/js/jquery-2.1.3.min.js"></script>
+	 <script src="/js/plugins.js"></script>
+	 <script src="/js/main.js"></script>
+
+
+</body>
+
+</html>

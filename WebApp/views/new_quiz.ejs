@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" type="text/css" href="/css/create-quiz.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="head">
+        <a href="/admin"><img id="bck-btn" src="https://img.icons8.com/ios/50/3E354D/circled-left-2.png"/></a>
+        <h1>Create a Quiz</h1>
+    </div>
+
+    <div id="form-wrap">
+        <form class="quiz-form" action="/admin/new_quiz" method="POST">
+            Quiz Code: <span style="color:red">*</span><br><input type="text" id="text-area" name="quizCode"><br><br>
+            Quiz Name: <span style="color:red">*</span><br><input type="text" id="text-area" name="quizName"><br><br>
+            Always Visible?
+            <select id="bool" name="visiblity">
+                <option value="Yes">Yes</option>
+                <option data-check="true" value="No">No</option>
+            </select><br><br>
+
+            Want To Show The Results At The End Of Quiz ?
+            <select id="bool"  name="results_visiblity">
+                <option value="Yes">Yes</option>
+                <option  value="No">No</option>
+            </select><br><br>
+
+            Topic: <span style="color:red">*</span><br><input type="text" id="text-area" name="Topic"><br><br>
+            Rules: <span style="color:red">*</span><br><textarea type="text" id="text-area" name="Rules"></textarea><br><br>
+            Number Of Questions <input  type="number" min="1" max="200" name="qcnt" class="textarea" rows="1" id="question-count" value="1"><br><br>
+            Setter: <span style="color:red">*</span><br><input type="text" id="set-Name" name="setterName" disabled value="<%=locals.user.name%>"><br><br>
+            <div id="need-data" style="display: none;">
+                Starting Date: <span style="color:red">*</span><br><input id="text-area" type="date" name="startDate"><br><br>
+                Starting Time: <span style="color:red">*</span><br><input type="time" id="text-area" name="startTime"><br><br>
+                Ending Date: <span style="color:red">*</span><br><input id="text-area" type="date" name="endDate"><br><br>
+                Ending Time: <span style="color:red">*</span><br><input type="time" id="text-area" name="endTime"><br>
+            </div>
+            <br>
+            Duration (minutes): <span style="color:red">*</span><br><input type="text"  id="text-area" name="duration"><br><br><br>
+            <div id="next-btn">Add Questions</div>
+            <div id="question-list"></div>
+            
+            <button  id="create-contest" type="submit" class="bn632-hover bn18" style="display:none;">Create Quiz</button>	
+            </form>
+    </div>
+
+    <script>
+         $("#create-contest").click(function (){
+            $("#question-count").prop('disabled', false);
+            $("#set-Name").prop('disabled', false);
+        });
+    </script>
+       
+    <script>
+        $("#next-btn").click(function () {
+                
+                if($('[name="quizCode"]').val().length===0){
+                    alert("Please enter a valid quiz code!");
+                    return;
+                } 
+                if($('[name="quizName"]').val().length===0){
+                    alert("Please enter a valid quiz name!");
+                    return;
+                } 
+                if($('[name="Topic"]').val().length===0){
+                    alert("Topic field cannot be empty!");
+                    return;
+                } 
+                if($('[name="Rules"]').val().length===0){
+                    alert("Add rules for the quiz!");
+                    return;
+                } 
+                if($('[name="duration"]').val().length===0){
+                    alert("Enter the duration of quiz!");
+                    return;
+                } 
+                $('#create-contest').show() 
+                $("#next-btn").remove();
+                $("#question-count").prop('disabled', true);
+                var count = parseInt($('#question-count').val());
+                //console.log(typeof(count));
+                
+              
+                for(var i=1; i<=count;i++)
+                {
+                   newRowAdd = 
+                '<div id="question-wrapper">' +
+                `Question ${i}: <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Quest_${i}"></textarea><br>`+
+                `<div id="opt-wrap">Option 1: <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Quest_${i}_1"></textarea><br>`+
+                `Option 2: <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Quest_${i}_2"></textarea><br>`+
+                `Option 3: <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Quest_${i}_3"></textarea><br>`+
+                `Option 4: <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Quest_${i}_4"></textarea><br>`+
+                `Answer  : <span style="color:red">*</span><br><textarea type="text"  id="text-area" name="Ans${i}"></textarea><br>`+
+                '</div></div><br><br>';
+                    $('#question-list').append(newRowAdd);
+                }
+                
+                
+            });
+    </script>
+</body>
+<script>
+   
+    $(function() {
+    $('select').change(function(evt) {
+       
+       $('select option:selected').data('check') ? 
+           $('#need-data').show() : $('#need-data').hide();
+    });
+});
+</script>
+
+
+
+
+
+</html>

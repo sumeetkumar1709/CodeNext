@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Ongoing Quiz</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+	<link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/quizrunning.css" type="text/css">
+    
+</head>
+<% var i=0 %>
+<% var col=[{f:"#6A82FB",s:"#FC5C7D"},{f:"#2ebf91",s:"#8360c3"},{f:"#E94057",s:"#8A2387"},
+{f:"#BD3F32",s:"#CB356B"},{f:"#B06AB3",s:"#4568DC"},{f:"#00dbde",s:"#fc00ff"},
+{f:"#F9D423",s:"#FF4E50"},{f:"#ff5858",s:"#f857a6"},{f:"#EA384D",s:"#D31027"},
+{f:"#753a88",s:"#cc2b5e"}] %>
+
+<% let x = Math.floor((Math.random() * 10) );%>
+<body style="--c:<%=col[x].f%>; --cf:<%=col[x].s%>;" id="boss">
+    <h1><%=data.name%></h1>
+    <p id ="question-counter">1 of <%=data.questionCount%></p>
+    
+    
+    <% for(var i = 0; i < data.questionCount; i++){ %>
+        <% if (i==0) { %>
+            <div  class="question_<%=i%>" id="question-card">
+                <textarea id="question" readonly>Q<%=i+1%>:  <%=data.questions[i].Name%></textarea>
+                <div id="opt-wrapper">
+                    <div class="row1" id="row1">
+                        <div class="opt" id="option1"><%=data.questions[i].Options[0]%></div>
+                        <div class="opt" id="option2"><%=data.questions[i].Options[1]%></div>
+                    </div>
+                    <div class="row2" id="row2">
+                        <div class="opt" id="option3"><%=data.questions[i].Options[2]%></div>
+                        <div class="opt" id="option4"><%=data.questions[i].Options[3]%></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <% }
+        else { %>
+            <div style="display :none;" class="question_<%=i%>" id="question-card">
+                <textarea id="question" readonly>Q<%=i+1%>:  <%=data.questions[i].Name%></textarea>
+                <div id="opt-wrapper">
+                    <div class="row1" id="row1">
+                        <div class="opt" id="option1"><%=data.questions[i].Options[0]%></div>
+                        <div class="opt" id="option2"><%=data.questions[i].Options[1]%></div>
+                    </div>
+                    <div class="row2" id="row2">
+                        <div class="opt" id="option3"><%=data.questions[i].Options[2]%></div>
+                        <div class="opt" id="option4"><%=data.questions[i].Options[3]%></div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    
+    <% if (i==data.questionCount-1) { %>
+            <div class="question_btn<%=i%>" style="display :none;" id="next-btn">
+                <p id="nxt-ques" class=""> Submit Quiz </p>
+            </div>
+        <% } else { %>
+
+            <% if (i==0) { %>
+                <div class="question_btn<%=i%>" id="next-btn">
+                    <p id="nxt-ques"> Next Question </p>
+                </div>
+            <% }
+            else { %>
+                <div class="question_btn<%=i%>" style="display :none;" id="next-btn">
+                    <p id="nxt-ques"> Next Question </p>
+                </div>
+                <% } %>
+
+            
+            <% } %>
+    
+    <% } %>
+    
+    <p id="f1" name="answer"></p>
+    
+    
+     
+
+    <script type="text/javascript">
+       let time = <%=data.duration%>*60; //minutes * 60 seconds
+        let refreshIntervalId = setInterval(updateCountdown, 1000); //update every 1 second
+
+        function updateCountdown() {
+            const minutes = Math.floor(time / 60); // rounds a number DOWN to the nearest integer
+            let seconds = time % 60;
+
+            seconds = seconds < 10 ? '0' + seconds : seconds; 
+            const contdownEl = document.getElementById("f1"); 
+            contdownEl.innerHTML = `${minutes}:${seconds}`;
+
+            time--;
+            if(time===0){
+                var topass = sessionStorage.getItem("cur");
+                window.location.href = `/quiz/${topass}/<%=data.quizID%>/<%=participants.user%>`;
+            }
+            if (time < 0) { //stop the setInterval whe time = 0 for avoid negative time
+                clearInterval(refreshIntervalId);
+            }
+        }
+    </script>
+    <script type="text/javascript">
+
+        
+        var ans=[]
+        var row1Container = document.getElementById("boss");
+        let ques = document.getElementById("question");
+        let btn = document.getElementById("next-btn");
+        let ques_cnt = document.getElementById("question-counter");
+        let nxt_ques = document.getElementById("nxt-ques");
+        let clicks=0;
+
+
+        
+
+
+        document.querySelectorAll("#next-btn").forEach((e) => {
+            e.addEventListener("click", () => {
+                var current = row1Container.getElementsByClassName("active");
+
+                if(current.length ==0){
+                    var str={ans:-1};
+                    ans.push(str);
+                }
+                else{
+                    var id = current[0].id;
+                    var option = parseInt(id[id.length-1]);
+                    var str ={ans:option}
+                    ans.push(str);
+                    current[0].className="opt";
+                }
+
+                //console.log(ans);
+                
+                clicks++;
+                
+
+            if(clicks == parseInt(<%=data.questionCount%>)-1) {
+                nxt_ques.innerHTML = "Submit Question";  
+            }
+
+            var tempo = "";
+            for(var j=0;j<clicks;j++) {
+                    tempo+= ans[j].ans;
+                }
+            sessionStorage.setItem("cur",btoa(unescape(encodeURIComponent(tempo))));
+            if(clicks == parseInt(<%=data.questionCount%>)) {
+                var topass = ""
+                for(var j=0;j< <%=data.questionCount%>;j++) {
+                    topass+= ans[j].ans;
+                }
+                var enc = btoa(unescape(encodeURIComponent(topass)));
+                window.location.href = `/quiz/${enc}/<%=data.quizID%>/<%=participants.user%>`;
+            }
+            else{
+                ques_cnt.innerHTML = clicks+1 +" of " + <%=data.questionCount%>;
+            }
+
+            var prev=`.question_${clicks-1}`;
+            var next=`.question_${clicks}`;
+            $(prev).css("display","none");
+            $(next).css("display","block");
+            var prev=`.question_btn${clicks-1}`;
+            var next=`.question_btn${clicks}`;
+            $(prev).css("display","none");
+            $(next).css("display","flex");
+            });
+        });
+
+    </script>
+     
+     <script>
+
+        var row1Container = document.getElementById("boss");
+        var row1btns = row1Container.getElementsByClassName("opt");
+        
+
+        for (var i = 0; i < row1btns.length; i++) {
+            row1btns[i].addEventListener("click", function() {
+                var current = row1Container.getElementsByClassName("active");
+                
+                if(current.length>0){
+                    current[0].className="opt";
+                }
+
+                this.className += " active";
+                
+                
+                //console.log(current);
+            
+            });
+        }
+       
+    </script>
+
+</body>
+
+
+
+</html>
+

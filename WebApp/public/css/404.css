@@ -1,0 +1,37 @@
+body,html{
+    height: 100%;
+}
+
+.page-not-found{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+img:hover{
+    opacity: 0.9;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+h1{
+    color:#FF7C78;
+    z-index: 100;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    padding-left: 12%;
+    padding-top: 2%;
+}
+

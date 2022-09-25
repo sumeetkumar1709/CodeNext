@@ -1,0 +1,133 @@
+#wrap{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#upc-con{
+    color:#D0163D;
+    padding-top:100px;
+    padding-bottom: 20px;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contest-coming{
+    background-color: #325E6D;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 90%);
+    width:70%;
+    
+}
+
+thead{
+    border:2px solid #F49E78 !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    
+}
+
+thead>tr>th>a{
+    color:#F0A34F !important;
+}
+
+tr{
+
+    border:2px solid #F49E78 !important;
+    height:40px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+td{
+    padding-left: 3px !important;
+    justify-content: space-around;
+    align-items: center;
+    color:#BBC6C7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+}
+
+button{
+    width:65px;
+    height:25px;
+    font-size: 14px;
+}
+
+#contest-questions-disp{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #15262D, #0F0F12);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #15262D, #0F0F12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#cont-name{
+    padding-top: 30px;
+    color:#D0163D;
+    cursor: pointer;
+
+}
+
+
+#temp-wrap{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+
+#back-btn{
+    height:40px;
+    width: 40px;
+    margin-left: 1.1%;
+    opacity: 1;
+    margin-top: 5px;
+}
+
+#back-btn:hover{
+    opacity: 0.8;
+    transition: all 200ms ease-in-out;
+    cursor:pointer;
+}
+
+#ranklist-btn{
+    width:95px;
+    height:45px;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: 13px;
+    border-radius: 3px;
+}
+
+tbody>tr>td>a{
+    color:#77A9E0 !important;
+    text-decoration: none;
+}
+
+tbody>tr>td{
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px !important;
+}
+
+#con-rank{
+    color: #D0163D;
+    margin-top: 0;
+    text-decoration: none;
+    opacity: 0.92;
+}
+
+#back-btn-rankings{
+    padding-right: 99%;
+    padding-top: 15px; 
+    transform: scale(0.86, 0.86);
+    -ms-transform: scale(0.86, 0.86);
+    -webkit-transform: scale(0.86, 0.86);
+    cursor: pointer;
+}
+
