@@ -31,13 +31,17 @@ Result report to admin.
 Support for themes.
 
 
-
+## Tech Stack
+App- Android Studio, Java, Firebase Realtime Database, Storage, Ace editor, ArmDev Codeview, Jdoodle Compile API, NewsApi.org's API,
+     Shared Preferences, Volley, LottieAnimations, etc.
+     
+Web- HTML,CSS, NodeJs, Express, MongoDb Atlas, Ejs, Firebase, Judge0 Api, Jdoodle.
 
 ## Demo
 
-Website Link:
+Website live Link:  https://codenext.herokuapp.com/
 
-App APK link:
+App APK live link:  https://drive.google.com/file/d/1u2IpftDWxKXwQMahD4McL4oyM2p1T6aN/view?usp=sharing
 
 
 Demo APP:
