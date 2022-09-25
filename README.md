@@ -8,9 +8,8 @@ Codenext App and Website has ben developed for Sds's HackADuck 2.0.
 
 
 
-## Description
-Theme 3 - Coding Contest Platform
-Basic Deliverables - Delivered.
+## Description and Features
+Based on: Theme 3 - Coding Contest Platform
 
 Codenext is an online platform(Both app and website) where multiple quizzes and coding tests can be hosted and also it can be evaluated as well on the same platform.
 The platform is compatible with various languages and additions.
