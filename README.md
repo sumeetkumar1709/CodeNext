@@ -1,5 +1,7 @@
 
-# Cluster- Team Segmentation Fault -Kumar Harsh, Sumeet Kumar, Ruchit.
+# CodeNext- Coding made easy!
+
+Team Segmentation Fault -Kumar Harsh, Sumeet Kumar, Ruchit.
 
 Codenext App and Website has ben developed for Sds's HackADuck 2.0.
 
