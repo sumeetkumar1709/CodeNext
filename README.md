@@ -44,17 +44,20 @@ App APK live link:  https://drive.google.com/file/d/1u2IpftDWxKXwQMahD4McL4oyM2p
 
 
 Demo APP: (CLICK)
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8aXK6mS_82k/0.jpg)](https://www.youtube.com/watch?v=8aXK6mS_82k)
 
 
 
-
-
 Demo Web: (CLICK)
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4c41E0dtouQ/0.jpg)](https://www.youtube.com/watch?v=4c41E0dtouQ)
 
 
 
+##Resources
+
+https://drive.google.com/drive/u/1/folders/1-Al2F7wNPEXERHmnSEqnQTqvqJhSDDYt
 
 
 
